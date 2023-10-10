@@ -22,6 +22,10 @@ public class Database {
     protected PreparedStatement preparedStatement;
     
     public Database() {
+        this.openConnection();
+    }
+    
+    protected final void openConnection() {
         try {
             String url = "jdbc:mysql://localhost/pbo_perpustakaan";
             String username = "root";
