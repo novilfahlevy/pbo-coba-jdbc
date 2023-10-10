@@ -28,19 +28,6 @@ public class Database {
             String password = "";
             
             this.connection = DriverManager.getConnection(url, username, password);
-            
-            this.preparedStatement = this.connection.prepareStatement("DELETE FROM member WHERE id = ?");
-            
-            this.preparedStatement.setInt(1, 20);
-            
-            int result = this.preparedStatement.executeUpdate();
-            
-            if (result > 0) {
-                System.out.println("Member berhasil dihapus.");
-            }
-            
-            this.closeConnection();
-            
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
         }
